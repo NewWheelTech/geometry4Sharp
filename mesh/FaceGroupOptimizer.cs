@@ -13,7 +13,7 @@ namespace g4
     public class FaceGroupOptimizer
     {
         // cannot change this w/o updating GetEnumeratorF
-        DMesh3 mesh;
+        readonly DMesh3 mesh;
         public DMesh3 Mesh { get { return mesh; } }
 
         // defaults to Mesh.TriangleIndices(), override to use a sub-region
@@ -33,7 +33,7 @@ namespace g4
         public bool NoEarGroupSwaps = false;
 
         // internal buffer
-        List<Index2i> temp = new List<Index2i>();
+        readonly List<Index2i> temp = new List<Index2i>();
 
         public FaceGroupOptimizer(DMesh3 meshIn)
         {

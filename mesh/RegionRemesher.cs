@@ -19,7 +19,7 @@ namespace g4
 
         // By default is initialized w/ all boundary constraints
         // You can add more, but don't screw up!
-        MeshConstraints bdry_constraints;
+        readonly MeshConstraints bdry_constraints;
 
         int[] cur_base_tris;
 
