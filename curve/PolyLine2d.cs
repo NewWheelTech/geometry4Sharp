@@ -2,11 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 
 namespace g4
 {
-	public class PolyLine2d : IEnumerable<Vector2d>
+    public class PolyLine2d : IEnumerable<Vector2d>
 	{
 		protected List<Vector2d> vertices;
 		public int Timestamp;

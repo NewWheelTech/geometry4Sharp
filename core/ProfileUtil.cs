@@ -29,10 +29,7 @@ namespace g4
         {
             Watch.Stop();
         }
-        public bool Running
-        {
-            get { return Watch.IsRunning; }
-        }
+        public bool Running => Watch.IsRunning;
 
         public void Accumulate(bool bReset = false)
         {
@@ -48,10 +45,7 @@ namespace g4
             Watch.Start();
         }
 
-        public string AccumulatedString
-        {
-            get { return string.Format(TimeFormatString(Accumulated), Accumulated); }
-        }
+        public string AccumulatedString => string.Format(TimeFormatString(Accumulated), Accumulated);
         public override string ToString()
         {
             TimeSpan t = Watch.Elapsed;

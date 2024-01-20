@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Diagnostics;
 
-namespace g4 {
+namespace g4
+{
 
-	public class Arc2d : IParametricCurve2d
+    public class Arc2d : IParametricCurve2d
 	{
 		public Vector2d Center;
 		public double Radius;

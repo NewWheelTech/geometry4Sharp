@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace g4
 {
-	public class PolyLine3d : IEnumerable<Vector3d>
+    public class PolyLine3d : IEnumerable<Vector3d>
 	{
 		protected List<Vector3d> vertices;
 		public int Timestamp;

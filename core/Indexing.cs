@@ -31,10 +31,9 @@ namespace g4
     {
         public bool this[int key]
         {
-            get {
-                return Contains(key);
-            }
-            set {
+            get => Contains(key);
+            set
+            {
                 if (value == true)
                     Add(key);
                 else if (value == false && Contains(key))
@@ -112,19 +111,22 @@ namespace g4
 
         public bool this[int key]
         {
-            get {
-                return (bits != null) ? bits[key] : hash.Contains(key);
-            }
-            set {
-                if (bits != null) {
-                    if (bits[key] != value) {
+            get => (bits != null) ? bits[key] : hash.Contains(key);
+            set
+            {
+                if (bits != null)
+                {
+                    if (bits[key] != value)
+                    {
                         bits[key] = value;
                         if (value == false)
                             count--;
                         else
                             count++;
                     }
-                } else {
+                }
+                else
+                {
                     if (value == true)
                         hash.Add(key);
                     else if (value == false && hash.Contains(key))

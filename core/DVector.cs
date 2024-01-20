@@ -62,26 +62,15 @@ namespace g4
         //    get { return Blocks.Count * nBlockSize;  }
         //}
 
-        public int Length {
-            get { return iCurBlock * nBlockSize + iCurBlockUsed;  }
-        }
+        public int Length => iCurBlock * nBlockSize + iCurBlockUsed;
 
-        public int BlockCount {
-            get { return nBlockSize; }
-        }
+        public int BlockCount => nBlockSize;
 
-        public int size {
-            get { return Length; }
-        }
-                
-        public bool empty 
-        {
-            get { return iCurBlock == 0 && iCurBlockUsed == 0; }
-        }
-        
-        public int MemoryUsageBytes {
-            get { return (Blocks.Count == 0) ? 0 : Blocks.Count * nBlockSize * System.Runtime.InteropServices.Marshal.SizeOf(Blocks[0][0]); }
-        }
+        public int size => Length;
+
+        public bool empty => iCurBlock == 0 && iCurBlockUsed == 0;
+
+        public int MemoryUsageBytes => (Blocks.Count == 0) ? 0 : Blocks.Count * nBlockSize * System.Runtime.InteropServices.Marshal.SizeOf(Blocks[0][0]);
 
         public void Add(T value)
         {
@@ -201,30 +190,27 @@ namespace g4
         public T this[int i]
         {
             // [RMS] bit-shifts here are significantly faster
-            get {
-                //int bi = i / nBlockSize;
-                //return Blocks[bi][i - (bi * nBlockSize)];
-                //int bi = i >> nShiftBits;
-                //return Blocks[bi][i - (bi << nShiftBits)];
-                return Blocks[i >> nShiftBits][i & nBlockIndexBitmask];
-            }
-            set {
-                //int bi = i / nBlockSize;
-                //Blocks[bi][i - (bi * nBlockSize)] = value;
-                //int bi = i >> nShiftBits;
-                //Blocks[bi][i - (bi << nShiftBits)] = value;
-                Blocks[i >> nShiftBits][i & nBlockIndexBitmask] = value;
-            }
+            //int bi = i / nBlockSize;
+            //return Blocks[bi][i - (bi * nBlockSize)];
+            //int bi = i >> nShiftBits;
+            //return Blocks[bi][i - (bi << nShiftBits)];
+            get => Blocks[i >> nShiftBits][i & nBlockIndexBitmask];
+
+            //int bi = i / nBlockSize;
+            //Blocks[bi][i - (bi * nBlockSize)] = value;
+            //int bi = i >> nShiftBits;
+            //Blocks[bi][i - (bi << nShiftBits)] = value;
+            set => Blocks[i >> nShiftBits][i & nBlockIndexBitmask] = value;
         }
 
 
         public T back {
-            get { return Blocks[iCurBlock][iCurBlockUsed-1]; }
-            set { Blocks[iCurBlock][iCurBlockUsed-1] = value; }
+            get => Blocks[iCurBlock][iCurBlockUsed - 1];
+            set => Blocks[iCurBlock][iCurBlockUsed - 1] = value;
         }
         public T front {
-            get { return Blocks[0][0]; }
-            set { Blocks[0][0] = value; }
+            get => Blocks[0][0];
+            set => Blocks[0][0] = value;
         }
 
 

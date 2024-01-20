@@ -1,13 +1,12 @@
-using System;
 using System.Collections.Generic;
 
 
 namespace g4
 {
-	/// <summary>
-	/// Summary description for PolyLine.
-	/// </summary>
-	public class DPolyLine2f
+    /// <summary>
+    /// Summary description for PolyLine.
+    /// </summary>
+    public class DPolyLine2f
 	{
 		public struct Edge {
 			public int v1;

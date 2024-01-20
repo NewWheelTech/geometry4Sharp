@@ -1,28 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace g4 {
+namespace g4
+{
 
-	// [RMS] partial ellipse. 
-	//   Note: Seems like there is something weird about start/end angles for elliptic arcs. 
-	//   If I just evaluate the same way I would evaluate circular arc (eg lerp between angles),
-	//   then the arc is too long (at least compared to how it "should" be in a .dxf file).
-	//
-	//   Currently the SampleT function corrects for this, based on formula from dxf.net.
-	//   However possibly this is dxf-specific?
-	//
-	//   Possibly this is just inherent in the "angle" being used as parameter of the ellipse.
-	//   Seems right at 0/90/180/270, but eg at t=45 degrees, the line to the point on the 
-	//   ellipse will *not* be 45 deg from the x axis. So what do these angles mean, exactly??
-	//
-	// 	 This post http://adndevblog.typepad.com/autocad/2013/01/an-explanation-of-elliptical-arcs-dxf-group-code-41-for-lisp-and-ads-objectarx.html
-	//   explains how to convert from a point on ellipse to "parametric angle", based
-	//   on two concentric circles w/ radii of major/minor axes. Possibly that is what
-	//   the formula in SampleT is doing?
-	//
-	public class EllipseArc2d : IParametricCurve2d
+    // [RMS] partial ellipse. 
+    //   Note: Seems like there is something weird about start/end angles for elliptic arcs. 
+    //   If I just evaluate the same way I would evaluate circular arc (eg lerp between angles),
+    //   then the arc is too long (at least compared to how it "should" be in a .dxf file).
+    //
+    //   Currently the SampleT function corrects for this, based on formula from dxf.net.
+    //   However possibly this is dxf-specific?
+    //
+    //   Possibly this is just inherent in the "angle" being used as parameter of the ellipse.
+    //   Seems right at 0/90/180/270, but eg at t=45 degrees, the line to the point on the 
+    //   ellipse will *not* be 45 deg from the x axis. So what do these angles mean, exactly??
+    //
+    // 	 This post http://adndevblog.typepad.com/autocad/2013/01/an-explanation-of-elliptical-arcs-dxf-group-code-41-for-lisp-and-ads-objectarx.html
+    //   explains how to convert from a point on ellipse to "parametric angle", based
+    //   on two concentric circles w/ radii of major/minor axes. Possibly that is what
+    //   the formula in SampleT is doing?
+    //
+    public class EllipseArc2d : IParametricCurve2d
 	{
 		public Vector2d Center;
 		public Vector2d Axis0, Axis1;

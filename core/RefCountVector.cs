@@ -45,22 +45,12 @@ namespace g4
                 rebuild_free_list();
         }
 
-        public DVector<short> RawRefCounts {
-            get { return ref_counts; }
-        }
+        public DVector<short> RawRefCounts => ref_counts;
 
-        public bool empty {
-            get { return used_count == 0; }
-        }
-        public int count {
-            get { return used_count; }
-        }
-        public int max_index {
-            get { return ref_counts.size; }
-        }
-        public bool is_dense {
-            get { return free_indices.Length == 0; }
-        }
+        public bool empty => used_count == 0;
+        public int count => used_count;
+        public int max_index => ref_counts.size;
+        public bool is_dense => free_indices.Length == 0;
 
 
         public bool isValid(int index) {
@@ -247,9 +237,7 @@ namespace g4
         }
 
 
-        public string UsageStats {
-            get { return string.Format("RefCountSize {0}  FreeSize {1} FreeMem {2}kb", ref_counts.size, free_indices.size, free_indices.MemoryUsageBytes/1024); }
-        }
+        public string UsageStats => string.Format("RefCountSize {0}  FreeSize {1} FreeMem {2}kb", ref_counts.size, free_indices.size, free_indices.MemoryUsageBytes / 1024);
 
 
 

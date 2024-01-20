@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
 
 namespace g4
 {
-	public class Polygon2d : IDuplicatable<Polygon2d>
+    public class Polygon2d : IDuplicatable<Polygon2d>
     {
         protected List<Vector2d> vertices;
 		public int Timestamp;

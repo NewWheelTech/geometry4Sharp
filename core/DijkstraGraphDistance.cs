@@ -402,9 +402,7 @@ namespace g4
         /// <summary>
         /// Get the maximum distance encountered during the Compute()
         /// </summary>
-        public float MaxDistance {
-            get { return max_value; }
-        }
+        public float MaxDistance => max_value;
 
 
         /// <summary>

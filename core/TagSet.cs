@@ -60,7 +60,7 @@ namespace g4
             type = (byte)(combined >> 24);
             value = combined & 0xFFFFFF;
         }
-        public int intValue { get { return ((int)type) << 24 | value; } }
+        public int intValue => ((int)type) << 24 | value;
     }
 
 

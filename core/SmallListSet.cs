@@ -59,9 +59,7 @@ namespace g4
         /// <summary>
         /// returns largest current list_index
         /// </summary>
-        public int Size {
-            get { return list_heads.size; }
-        }
+        public int Size => list_heads.size;
 
         /// <summary>
         /// resize the list-of-lists
@@ -440,13 +438,8 @@ namespace g4
 
 
 
-        public string MemoryUsage
-        {
-            get {
-                return string.Format("ListSize {0}  Blocks Count {1} Free {2} Mem {3}kb  Linked Mem {4}kb",
+        public string MemoryUsage => string.Format("ListSize {0}  Blocks Count {1} Free {2} Mem {3}kb  Linked Mem {4}kb",
                     list_heads.size, allocated_count, free_blocks.size * sizeof(int) / 1024, block_store.size, linked_store.size * sizeof(int) / 1024);
-            }
-        }
 
 
     }

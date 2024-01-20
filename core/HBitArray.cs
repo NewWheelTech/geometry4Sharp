@@ -23,15 +23,16 @@ namespace g4
             int bits;
             public bool this[int i]
             {
-                get { return (bits & (1 << i)) != 0; }
-                set {
-                        if (value)
-                            bits |= (1 << i);
-                        else
-                            bits &= ~(1 << i);
-                    }
+                get => (bits & (1 << i)) != 0;
+                set
+                {
+                    if (value)
+                        bits |= (1 << i);
+                    else
+                        bits &= ~(1 << i);
+                }
             }
-            public int Data { get { return bits; } }
+            public int Data => bits;
         }
 
 
@@ -71,20 +72,14 @@ namespace g4
 
         public bool this[int i]
         {
-            get { return Get(i); }
-            set { Set(i, value); }
+            get => Get(i);
+            set => Set(i, value);
         }
 
 
-        public int Count
-        {
-            get { return max_index; }
-        }
+        public int Count => max_index;
 
-        public int TrueCount
-        {
-            get { return count; }
-        }
+        public int TrueCount => count;
 
 
         public bool Contains(int i)

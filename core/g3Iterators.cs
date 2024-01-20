@@ -64,11 +64,11 @@ namespace g4
         }
 
         public int this[int index] {
-            get { return MapF(BaseList[index]); }
-            set { throw new NotImplementedException(); }
+            get => MapF(BaseList[index]);
+            set => throw new NotImplementedException();
         }
-        public int Count { get { return BaseList.Count; } }
-        public bool IsReadOnly { get { return true; } }
+        public int Count => BaseList.Count;
+        public bool IsReadOnly => true;
 
         public void Add(int item) { throw new NotImplementedException(); }
         public void Clear() { throw new NotImplementedException(); }
@@ -123,11 +123,11 @@ namespace g4
         static public IntSequence FromToInclusive(int a, int b) { return new IntSequence(a, b); }
 
         public int this[int index] {
-            get { return range.a + index; }
-            set { throw new NotImplementedException(); }
+            get => range.a + index;
+            set => throw new NotImplementedException();
         }
-        public int Count { get { return range.Length+1; } }
-        public bool IsReadOnly { get { return true; } }
+        public int Count => range.Length + 1;
+        public bool IsReadOnly => true;
 
         public void Add(int item) { throw new NotImplementedException(); }
         public void Clear() { throw new NotImplementedException(); }

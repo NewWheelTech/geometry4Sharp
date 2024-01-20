@@ -51,9 +51,7 @@ namespace g4
         }
 
 
-        public int Count {
-            get { return num_nodes; }
-        }
+        public int Count => num_nodes;
 
 
         /// <summary>
@@ -73,16 +71,12 @@ namespace g4
         /// <summary>
         /// id of node at head of queue
         /// </summary>
-        public int First {
-            get { return nodes[1].id; }
-        }
+        public int First => nodes[1].id;
 
         /// <summary>
         /// Priority of node at head of queue
         /// </summary>
-        public float FirstPriority {
-            get { return nodes[1].priority; }
-        }
+        public float FirstPriority => nodes[1].priority;
 
         /// <summary>
         /// constant-time check to see if id is already in queue

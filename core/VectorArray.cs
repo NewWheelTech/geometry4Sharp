@@ -23,9 +23,7 @@ namespace g4
             array = data;
         }
 
-        public int Count {
-            get { return array.Length/3; }
-        }
+        public int Count => array.Length / 3;
 
         public IEnumerator<T> GetEnumerator()
         {
@@ -73,12 +71,14 @@ namespace g4
 #endif
         }
         public VectorArray3d(double[] data) : base(data) { }
-        public Vector3d this[int i] {
-            get { return new Vector3d(array[3 * i], array[3 * i + 1], array[3 * i + 2]); }
-            set {
+        public Vector3d this[int i]
+        {
+            get => new Vector3d(array[3 * i], array[3 * i + 1], array[3 * i + 2]);
+            set
+            {
 #if DEBUG  
                 if (__debug && this[i][0] != invalid_value)
-                    throw new InvalidOperationException(string.Format("VectorArray3d.set - value {0} is already set!",i));
+                    throw new InvalidOperationException(string.Format("VectorArray3d.set - value {0} is already set!", i));
 #endif
                 Set(i, value[0], value[1], value[2]);
             }
@@ -97,8 +97,8 @@ namespace g4
         public VectorArray3f(int nCount) : base(nCount) { }
         public VectorArray3f(float[] data) : base(data) { }
         public Vector3f this[int i] {
-            get { return new Vector3f(array[3 * i], array[3 * i + 1], array[3 * i + 2]); }
-            set { Set(i, value[0], value[1], value[2]); }
+            get => new Vector3f(array[3 * i], array[3 * i + 1], array[3 * i + 2]);
+            set => Set(i, value[0], value[1], value[2]);
         }
 
         public IEnumerable<Vector3f> AsVector3f()
@@ -114,8 +114,8 @@ namespace g4
         public VectorArray3i(int nCount) : base(nCount) { }
         public VectorArray3i(int[] data) : base(data) { }
         public Vector3i this[int i] {
-            get { return new Vector3i(array[3 * i], array[3 * i + 1], array[3 * i + 2]); }
-            set { Set(i, value[0], value[1], value[2]); }
+            get => new Vector3i(array[3 * i], array[3 * i + 1], array[3 * i + 2]);
+            set => Set(i, value[0], value[1], value[2]);
         }
         // [RMS] for CW/CCW codes
         public void Set(int i, int a, int b, int c, bool bCycle = false) {
@@ -143,8 +143,8 @@ namespace g4
         public IndexArray3i(int nCount) : base(nCount) { }
         public IndexArray3i(int[] data) : base(data) { }
         public Index3i this[int i] {
-            get { return new Index3i(array[3 * i], array[3 * i + 1], array[3 * i + 2]); }
-            set { Set(i, value[0], value[1], value[2]); }
+            get => new Index3i(array[3 * i], array[3 * i + 1], array[3 * i + 2]);
+            set => Set(i, value[0], value[1], value[2]);
         }
         // [RMS] for CW/CCW codes
         public void Set(int i, int a, int b, int c, bool bCycle = false) {
@@ -186,10 +186,7 @@ namespace g4
             array = data;
         }
 
-        public int Count
-        {
-            get { return array.Length / 2; }
-        }
+        public int Count => array.Length / 2;
 
         public IEnumerator<T> GetEnumerator()
         {
@@ -222,8 +219,8 @@ namespace g4
         public VectorArray2d(int nCount) : base(nCount) { }
         public VectorArray2d(double[] data) : base(data) { }
         public Vector2d this[int i] {
-            get { return new Vector2d(array[2 * i], array[2 * i + 1]); }
-            set { Set(i, value[0], value[1]); }
+            get => new Vector2d(array[2 * i], array[2 * i + 1]);
+            set => Set(i, value[0], value[1]);
         }
 
         public IEnumerable<Vector2d> AsVector2d() {
@@ -236,8 +233,8 @@ namespace g4
         public VectorArray2f(int nCount) : base(nCount) { }
         public VectorArray2f(float[] data) : base(data) { }
         public Vector2f this[int i] {
-            get { return new Vector2f(array[2 * i], array[2 * i + 1]); }
-            set { Set(i, value[0], value[1]); }
+            get => new Vector2f(array[2 * i], array[2 * i + 1]);
+            set => Set(i, value[0], value[1]);
         }
 
         public IEnumerable<Vector2d> AsVector2f() {
@@ -253,8 +250,8 @@ namespace g4
         public IndexArray2i(int nCount) : base(nCount) { }
         public IndexArray2i(int[] data) : base(data) { }
         public Index2i this[int i] {
-            get { return new Index2i(array[2 * i], array[2 * i + 1]); }
-            set { Set(i, value[0], value[1]); }
+            get => new Index2i(array[2 * i], array[2 * i + 1]);
+            set => Set(i, value[0], value[1]);
         }
 
         public IEnumerable<Index2i> AsIndex2i() {
@@ -287,9 +284,7 @@ namespace g4
             array = data;
         }
 
-        public int Count {
-            get { return array.Length / 4; }
-        }
+        public int Count => array.Length / 4;
 
         public IEnumerator<T> GetEnumerator()
         {
@@ -328,9 +323,10 @@ namespace g4
     {
         public IndexArray4i(int nCount) : base(nCount) { }
         public IndexArray4i(int[] data) : base(data) { }
-        public Index4i this[int i] {
-            get { int j = 4 * i;  return new Index4i(array[j], array[j + 1], array[j + 2], array[j+3]); }
-            set { Set(i, value[0], value[1], value[2], value[4]); }
+        public Index4i this[int i]
+        {
+            get { int j = 4 * i; return new Index4i(array[j], array[j + 1], array[j + 2], array[j + 3]); }
+            set => Set(i, value[0], value[1], value[2], value[4]);
         }
         public IEnumerable<Index4i> AsIndex4i()
         {

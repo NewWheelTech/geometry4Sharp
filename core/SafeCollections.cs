@@ -46,9 +46,7 @@ namespace g4
         }
 
 
-        public List<T> Result {
-            get { return List; }
-        }
+        public List<T> Result => List;
     }
 
 
