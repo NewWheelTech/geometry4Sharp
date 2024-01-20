@@ -107,7 +107,7 @@ namespace g4
     public class MeshConstraints
     {
 
-        Dictionary<int, EdgeConstraint> Edges = new Dictionary<int, EdgeConstraint>();
+        readonly Dictionary<int, EdgeConstraint> Edges = new Dictionary<int, EdgeConstraint>();
 
         int set_id_counter;         // use this to allocate FixedSetIDs
 
@@ -155,7 +155,7 @@ namespace g4
 
 
 
-        Dictionary<int, VertexConstraint> Vertices = new Dictionary<int, VertexConstraint>();
+        readonly Dictionary<int, VertexConstraint> Vertices = new Dictionary<int, VertexConstraint>();
 
         public bool HasVertexConstraint(int vid)
         {

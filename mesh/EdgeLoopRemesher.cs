@@ -103,7 +103,7 @@ namespace g4
 
 
 
-        HashSet<int> smoothV = new HashSet<int>();
+        readonly HashSet<int> smoothV = new HashSet<int>();
 
         protected override void begin_smooth() {
             base.begin_smooth();

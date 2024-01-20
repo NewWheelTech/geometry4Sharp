@@ -21,7 +21,7 @@ namespace g4
     //    - option to store components here (currently if client does not hold, we are discarding)
     public class MeshDecomposition
     {
-        DMesh3 mesh;
+        readonly DMesh3 mesh;
 
         public int MaxComponentSize { set; get; }
         public bool TrackVertexMapping = true;

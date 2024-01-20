@@ -62,7 +62,7 @@ namespace g4
                 num_boundary_edges++;
         }
 
-        int num_boundary_edges;
+        readonly int num_boundary_edges;
         public DMesh3 Mesh;
 
         public int VertexCount { get { return num_boundary_edges; } }
