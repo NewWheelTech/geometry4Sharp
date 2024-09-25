@@ -1,0 +1,28 @@
+# These files are text and should be normalized (convert crlf =&gt; lf)
+# See a section entitled "The New System" in https://adaptivepatchwork.com/2012/03/01/mind-the-end-of-your-line/
+
+*.config  text
+*.csproj  text
+*.sln     text
+*.vcxproj text
+
+*.json    text
+*.md      text
+*.xaml    text
+*.xml     text
+
+*.cmd     text
+*.cs      text diff=csharp
+*.dart    text
+*.msbuild text
+*.ps1     text
+*.txt     text
+*.tt      text
+
+# Images should be treated as binary
+# (binary is a macro for -text -diff)
+*.jepg    binary
+*.png     binary
+
+*.sdf     binary
+
